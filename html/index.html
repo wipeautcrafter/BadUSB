@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BadUSB</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/script.js"></script>
+    <script src="src/usb.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron mt-4 text-center">
+        <h1 class="text-primary">BadUSB ><br><span class="status font-weight-bold">Disconnected</span><span class="caret">_</span></h1>
+        <div class="lead status-text">Please connect your BadUSB.</div>
+      </div>
+      <div class="mt-3">
+        <label for="os">Operating System</label>
+        <div class="input-group mb-3">
+          <select class="custom-select data-input" id="os">
+            <option value="0" selected>Windows</option>
+            <option value="1">Mac</option>
+            <option value="2">Linux</option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn data-input btn-primary" data-save="os">Save</button>
+          </div>
+        </div>
+        <label for="qu">Quotes</label>
+        <div class="input-group mb-3">
+          <select class="custom-select data-input" id="qu">
+            <option value="0" selected>US (Double)</option>
+            <option value="1">UK (Single)</option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn data-input btn-primary" data-save="qu">Save</button>
+          </div>
+        </div>
+        <label for="sc">Script</label>
+        <div class="input-group mb-5">
+          <input type="number" class="form-control data-input" value="1" id="sc">
+          <div class="input-group-append">
+            <button class="btn data-input btn-primary" data-save="sc">Save</button>
+          </div>
+        </div>
+        <input type="hidden" id="ru" value="0">
+        <button class="btn btn-primary btn-block data-input" data-save="ru">Test Script</button>
+        <div class="small text-center">Please note this will run the script immediately after clicking.</div>
+      </div>
+    </div>
+
+    <!-- serial modal -->
+    <div class="modal fade" id="serial">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Serial Monitor</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="serial-out bg-dark text-light p-2 rounded text-wrap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

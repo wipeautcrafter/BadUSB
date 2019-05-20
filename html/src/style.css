@@ -1,0 +1,15 @@
+@keyframes blink {
+  49.99% {
+    opacity: 1;
+  }
+  50%, to {
+    opacity: 0;
+  }
+}
+.caret {
+  animation: blink 1s linear infinite;
+  font-weight: bold;
+}
+.text-wrap {
+  word-wrap: break-word;
+}
