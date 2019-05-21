@@ -7,5 +7,8 @@
 ...**Make sure it supports the Keyboard library!**
 3. Install all the Node Modules
 ...`npm install`
+4. Run the Electron installer
+...Mac/Linux: `./node_modules/.bin/electron-rebuild`
+...Windows: `.\node_modules\.bin\electron-rebuild`
 4. Run the Desktop App
 ...`npm start`
