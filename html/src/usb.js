@@ -23,11 +23,12 @@ let _port = null;
           var serialPort = require('serialport');
 
           _port = new serialPort(portid, {
-            baudRate: 9600
+            baudRate: 115200
           })
 
           _port.on("open", function() {
 
+            _port.write('programmer\n');
             $("<div><b>Arduino on "+portid+"</b></div>").appendTo(".serial-out");
 
             const parser = new Readline();
@@ -38,8 +39,6 @@ let _port = null;
 
               if(!connected) {
                 if(line.match(/bad(:[0-9]+){3}/)) {
-                  _port.write('programmer\n');
-
                   connected = true;
                   ui.connected(true, portid);
 
