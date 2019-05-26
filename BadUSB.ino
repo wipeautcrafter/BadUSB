@@ -39,7 +39,7 @@ void setup() {
 
   Serial.begin(115200);
 
-  delay(800);
+  delay(1000);
 
   if(Serial.available() != 0) {
     Serial.println("bad:"+String(EEPROM.read(0))+":"+String(EEPROM.read(1))+":"+String(EEPROM.read(2)));
