@@ -22,9 +22,11 @@ void exec() {
     delay(150);
     Keyboard.press(KEY_RETURN);
     Keyboard.releaseAll();
-  } else if(os == 1) {
-    // TODO: Mac
+  else if(os == 1) {
+    // TODO: Elevated Windows
   } else if(os == 2) {
+    // TODO: Mac
+  } else if(os == 3) {
     // TODO: Linux
   }
 }
