@@ -1,4 +1,6 @@
-# BadUSB
+# NodeJS BadUSB
+
+**THIS PROJECT IS DEPRECATED**
 
 ### Installation
 1. Clone the repository from Github<br>
