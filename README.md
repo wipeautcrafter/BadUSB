@@ -1,7 +1,5 @@
 # NodeJS BadUSB
 
-**THIS PROJECT IS DEPRECATED**
-
 ### Installation
 1. Clone the repository from Github<br>
 `git clone https://github.com/wipeautcrafter/BadUSB.git`
